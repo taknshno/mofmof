@@ -7,7 +7,7 @@
 
 <p>
   <strong>Rent:</strong>
-  <%= @property.rent %>
+  <%= @property.rent.to_s(:delimited) %>円
 </p>
 
 <p>
@@ -17,7 +17,7 @@
 
 <p>
   <strong>Age:</strong>
-  <%= @property.age %>
+  <%= @property.age %>年
 </p>
 
 <p>
