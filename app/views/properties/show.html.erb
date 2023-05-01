@@ -1,29 +1,44 @@
 <p id="notice"><%= notice %></p>
-
+<div class="show_field">
 <p>
-  <strong>Property name:</strong>
+  <strong><%= Property.human_attribute_name(:property_name) %>:</strong>
   <%= @property.property_name %>
 </p>
-
 <p>
-  <strong>Rent:</strong>
+  <strong><%= Property.human_attribute_name(:rent) %>:</strong>
   <%= @property.rent.to_s(:delimited) %>円
 </p>
-
 <p>
-  <strong>Address:</strong>
+  <strong><%= Property.human_attribute_name(:address) %>:</strong>
   <%= @property.address %>
 </p>
-
 <p>
-  <strong>Age:</strong>
+  <strong><%= Property.human_attribute_name(:age) %>:</strong>
   <%= @property.age %>年
 </p>
-
 <p>
-  <strong>Remarks:</strong>
+  <strong><%= Property.human_attribute_name(:remarks) %>:</strong>
   <%= @property.remarks %>
 </p>
+</div>
+<hr>
+<% @stations.each_with_index do |f, i| %>
+  <h3><%= "#{NearlyStation.model_name.human} #{i+1}" %></h3>
+  <div class="show_field">
+    <p>
+      <strong><%= NearlyStation.human_attribute_name(:line_name) %>:</strong>
+      <%= f.line_name %>
+    </p>
+    <p>
+      <strong><%= NearlyStation.human_attribute_name(:station_name) %>:</strong>
+      <%= f.station_name %>
+    </p>
+    <p>
+      <strong><%= NearlyStation.human_attribute_name(:on_foot_time) %>:</strong>
+      <%= f.on_foot_time %>
+    </p>
+  </div>
+<% end %>
 
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>
+<%= link_to '編集', edit_property_path(@property) %> |
+<%= link_to '戻る', properties_path %>
