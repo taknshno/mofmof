@@ -6,7 +6,7 @@
 </p>
 <p>
   <strong><%= Property.human_attribute_name(:rent) %>:</strong>
-  <%= @property.rent.to_s(:delimited) %>円
+  <%= @property.rent.try(:to_s, :delimited) %>円
 </p>
 <p>
   <strong><%= Property.human_attribute_name(:address) %>:</strong>

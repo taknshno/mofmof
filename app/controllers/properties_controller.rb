@@ -14,7 +14,7 @@ class PropertiesController < ApplicationController
   # GET /properties/new
   def new
     @property = Property.new
-    Constants::WITH_MAX.times do
+    Constants::WITH_NEW_DEFAULT.times do
      @property.nearly_stations.build
     end
   end
@@ -22,13 +22,11 @@ class PropertiesController < ApplicationController
   # GET /properties/1/edit
   def edit
     @stations = @property.nearly_stations
+    num = @stations.count
+    puts @stations.count
     max = Constants::WITH_MAX
-    num = @property.nearly_stations.count
-
     if num < max
-      (max - num).times do
         @property.nearly_stations.build
-       end
     end
   end
 
@@ -64,7 +62,7 @@ class PropertiesController < ApplicationController
   def destroy
     @property.destroy
     respond_to do |format|
-      format.html { redirect_to properties_url, notice: "Property was successfully destroyed." }
+      format.html { redirect_to properties_url, notice: "物件情報が削除されました" }
       format.json { head :no_content }
     end
   end

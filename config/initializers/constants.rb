@@ -1,3 +1,4 @@
 module Constants
-  WITH_MAX = 2
+  WITH_NEW_DEFAULT = 2
+  WITH_MAX = 10
 end
