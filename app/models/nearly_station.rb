@@ -1,0 +1,2 @@
+class NearlyStation < ApplicationRecord
+end
