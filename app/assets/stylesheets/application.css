@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+.show_field {
+  text-indent: 30px;
+}
+
+.show_field p {
+  padding: 10px 0;
+}
